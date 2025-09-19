@@ -1,0 +1,15 @@
+What this app is • A cyberpunk-themed class game where you earn and spend a permanent in‑app currency called credits. • Everything revolves around credits: leaderboard rankings, betting, and peer loans.
+
+How you get in • Hit Login, enter email, then set your character name once. You’ll start with 1000 credits.
+
+Dashboard (your main hub) • Challenges: See active challenges, submit proof (text and/or image URL), and wait for admin review to earn rewards (XP is recorded but not used for rankings). • Leaderboard: Live ranking of all users by total credits (permanent; no weekly reset). • Bets: • Browse open betting events; each option shows a win multiplier (e.g., 2x). • Place one bet per event; stake is deducted immediately. • Cancel your bet on OPEN events to get an instant refund. • Create your own events: add options and pick simple win multipliers via dropdowns (or advanced “label:odds” format). Set optional duration. • Manage events you created: close them and resolve by picking the winner; winners are paid stake × multiplier (floored). • See how many bets each open event has. • Loans: • If your credits hit 0, request a loan (amount you choose). • Others can view and fund pending requests; funding instantly transfers credits to the borrower. • Borrowers can cancel their own pending requests.
+
+Weekly stipend • Every user receives +200 credits weekly (no leaderboard reset, no weekly XP/badge rotation).
+
+Admin extras • Create and manage challenges, review submissions, and also view/resolve any betting events.
+
+Look and feel • Neon cyberpunk UI with animated backgrounds, glitch text, and smooth transitions; fully responsive.
+
+In short: sign in, pick your character name, earn credits from challenges, compete on the permanent credits leaderboard, create or join bets, and use loans as a safety net when you hit zero.
+
+Please style this project with a Cyberpunk theme. Apply the following design guidelines: Neon colors (#00ffff, #ff0080, #00ff00) on dark backgrounds (#000000, #0a0a0a), glowing borders. Grid patterns as background overlays, monospace fonts like 'Courier New' or 'Fira Code', scan line effects. Chromatic aberration with text-shadow, sharp angular geometries, glitch effects on hover, noise textures.

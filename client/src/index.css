@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0 0% 0%);
+  --foreground: hsl(180 100% 50%);
+  --card: hsl(0 0% 4%);
+  --card-foreground: hsl(180 100% 50%);
+  --popover: hsl(0 0% 0%);
+  --popover-foreground: hsl(180 100% 50%);
+  --primary: hsl(180 100% 50%);
+  --primary-foreground: hsl(0 0% 0%);
+  --secondary: hsl(300 100% 50%);
+  --secondary-foreground: hsl(0 0% 0%);
+  --muted: hsl(0 0% 20%);
+  --muted-foreground: hsl(0 0% 60%);
+  --accent: hsl(120 100% 50%);
+  --accent-foreground: hsl(0 0% 0%);
+  --destructive: hsl(300 100% 50%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(180 100% 50%);
+  --input: hsl(0 0% 10%);
+  --ring: hsl(180 100% 50%);
+  --chart-1: hsl(180 100% 50%);
+  --chart-2: hsl(120 100% 50%);
+  --chart-3: hsl(60 100% 50%);
+  --chart-4: hsl(240 100% 50%);
+  --chart-5: hsl(300 100% 50%);
+  --sidebar: hsl(0 0% 4%);
+  --sidebar-foreground: hsl(180 100% 50%);
+  --sidebar-primary: hsl(180 100% 50%);
+  --sidebar-primary-foreground: hsl(0 0% 0%);
+  --sidebar-accent: hsl(120 100% 50%);
+  --sidebar-accent-foreground: hsl(0 0% 0%);
+  --sidebar-border: hsl(180 100% 50%);
+  --sidebar-ring: hsl(180 100% 50%);
+  --font-sans: 'Fira Code', 'Courier New', monospace;
+  --font-serif: 'Fira Code', 'Courier New', monospace;
+  --font-mono: 'Fira Code', 'Courier New', monospace;
+  --radius: 0rem;
+  --shadow-2xs: 0px 2px 0px 0px hsl(180 100% 50% / 0.00);
+  --shadow-xs: 0px 2px 0px 0px hsl(180 100% 50% / 0.00);
+  --shadow-sm: 0px 2px 0px 0px hsl(180 100% 50% / 0.00), 0px 1px 2px -1px hsl(180 100% 50% / 0.00);
+  --shadow: 0px 2px 0px 0px hsl(180 100% 50% / 0.00), 0px 1px 2px -1px hsl(180 100% 50% / 0.00);
+  --shadow-md: 0px 2px 0px 0px hsl(180 100% 50% / 0.00), 0px 2px 4px -1px hsl(180 100% 50% / 0.00);
+  --shadow-lg: 0px 2px 0px 0px hsl(180 100% 50% / 0.00), 0px 4px 6px -1px hsl(180 100% 50% / 0.00);
+  --shadow-xl: 0px 2px 0px 0px hsl(180 100% 50% / 0.00), 0px 8px 10px -1px hsl(180 100% 50% / 0.00);
+  --shadow-2xl: 0px 2px 0px 0px hsl(180 100% 50% / 0.00);
+  --tracking-normal: 0em;
+  --spacing: 0.25rem;
+}
+
+.dark {
+  --background: hsl(0 0% 0%);
+  --foreground: hsl(180 100% 50%);
+  --card: hsl(0 0% 4%);
+  --card-foreground: hsl(180 100% 50%);
+  --popover: hsl(0 0% 0%);
+  --popover-foreground: hsl(180 100% 50%);
+  --primary: hsl(180 100% 50%);
+  --primary-foreground: hsl(0 0% 0%);
+  --secondary: hsl(300 100% 50%);
+  --secondary-foreground: hsl(0 0% 0%);
+  --muted: hsl(0 0% 20%);
+  --muted-foreground: hsl(0 0% 60%);
+  --accent: hsl(120 100% 50%);
+  --accent-foreground: hsl(0 0% 0%);
+  --destructive: hsl(300 100% 50%);
+  --destructive-foreground: hsl(0 0% 100%);
+  --border: hsl(180 100% 50%);
+  --input: hsl(0 0% 10%);
+  --ring: hsl(180 100% 50%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-mono antialiased bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .cyber-grid {
+    background-image: 
+      linear-gradient(rgba(0, 255, 255, 0.1) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+  }
+
+  .scan-line-overlay {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .scan-line-overlay::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(0, 255, 255, 0.8), transparent);
+    animation: scan-line 3s linear infinite;
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .glitch-text {
+    animation: glitch 0.3s linear infinite;
+  }
+
+  .glitch-text:hover {
+    animation: glitch 0.1s linear infinite;
+  }
+
+  .neon-border {
+    border: 1px solid var(--primary);
+    box-shadow: 0 0 5px var(--primary), inset 0 0 5px rgba(0, 255, 255, 0.1);
+  }
+
+  .neon-border:hover {
+    box-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary), inset 0 0 10px rgba(0, 255, 255, 0.2);
+  }
+
+  .cyber-button {
+    position: relative;
+    background: linear-gradient(45deg, rgba(0, 255, 255, 0.1), rgba(0, 255, 255, 0.05));
+    border: 1px solid var(--primary);
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    font-family: 'Fira Code', 'Courier New', monospace;
+  }
+
+  .cyber-button:hover {
+    background: linear-gradient(45deg, rgba(0, 255, 255, 0.2), rgba(0, 255, 255, 0.1));
+    box-shadow: 0 0 15px var(--primary);
+    transform: translateY(-1px);
+  }
+
+  .cyber-button:active {
+    transform: translateY(0);
+  }
+
+  .terminal-window {
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid var(--primary);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+  }
+
+  .data-table {
+    background: rgba(0, 0, 0, 0.8);
+    border-collapse: collapse;
+  }
+
+  .data-table th,
+  .data-table td {
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    padding: 12px;
+    text-align: left;
+  }
+
+  .data-table th {
+    background: rgba(0, 255, 255, 0.1);
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+  }
+
+  .data-table tr:hover {
+    background: rgba(0, 255, 255, 0.05);
+  }
+
+  .cyber-input {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid rgba(0, 255, 255, 0.5);
+    color: var(--primary);
+    padding: 12px;
+    font-family: 'Fira Code', 'Courier New', monospace;
+  }
+
+  .cyber-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  }
+
+  .status-bar {
+    background: linear-gradient(90deg, rgba(0, 255, 255, 0.1), rgba(255, 0, 128, 0.1));
+    border: 1px solid var(--primary);
+  }
+
+  .credit-display {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--accent);
+    text-shadow: 0 0 10px var(--accent);
+    animation: pulse-neon 2s ease-in-out infinite alternate;
+  }
+
+  .nav-tab {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(0, 255, 255, 0.3);
+    color: rgba(0, 255, 255, 0.7);
+    transition: all 0.3s ease;
+    font-family: 'Fira Code', 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  .nav-tab[data-state="active"] {
+    background: rgba(0, 255, 255, 0.1);
+    border-color: var(--primary);
+    color: var(--primary);
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  }
+
+  .nav-tab:hover {
+    background: rgba(0, 255, 255, 0.05);
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+}
+
+@keyframes scan-line {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100vh); }
+}
+
+@keyframes glitch {
+  0%, 100% { 
+    text-shadow: 0.05em 0 0 rgba(255, 0, 128, 0.75),
+               -0.05em -0.025em 0 rgba(0, 255, 255, 0.75),
+               0.025em 0.05em 0 rgba(0, 255, 0, 0.75);
+  }
+  15% { 
+    text-shadow: 0.05em 0 0 rgba(255, 0, 128, 0.75),
+               -0.05em -0.025em 0 rgba(0, 255, 255, 0.75),
+               0.025em 0.05em 0 rgba(0, 255, 0, 0.75);
+  }
+  16% { 
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 128, 0.75),
+               0.025em 0.025em 0 rgba(0, 255, 255, 0.75),
+               -0.05em -0.05em 0 rgba(0, 255, 0, 0.75);
+  }
+  49% { 
+    text-shadow: -0.05em -0.025em 0 rgba(255, 0, 128, 0.75),
+               0.025em 0.025em 0 rgba(0, 255, 255, 0.75),
+               -0.05em -0.05em 0 rgba(0, 255, 0, 0.75);
+  }
+  50% { 
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 128, 0.75),
+               0.05em 0 0 rgba(0, 255, 255, 0.75),
+               0 -0.05em 0 rgba(0, 255, 0, 0.75);
+  }
+  99% { 
+    text-shadow: 0.025em 0.05em 0 rgba(255, 0, 128, 0.75),
+               0.05em 0 0 rgba(0, 255, 255, 0.75),
+               0 -0.05em 0 rgba(0, 255, 0, 0.75);
+  }
+}
+
+@keyframes pulse-neon {
+  from {
+    box-shadow: 0 0 5px var(--accent), 0 0 10px var(--accent), 0 0 15px var(--accent);
+  }
+  to {
+    box-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent), 0 0 30px var(--accent);
+  }
+}
+
+@keyframes flicker {
+  0%, 19.999%, 22%, 62.999%, 64%, 64.999%, 70%, 100% {
+    opacity: 0.99;
+  }
+  20%, 21.999%, 63%, 63.999%, 65%, 69.999% {
+    opacity: 0.4;
+  }
+}
